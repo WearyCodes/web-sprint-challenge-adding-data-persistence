@@ -29,11 +29,4 @@ exports.up = async function (knex) {
     });
 };
 
-// task_id - primary key
-// task_description - required
-// task_notes - optional
-// task_completed - the database defaults it to false (integer 0) if not provided
-// project_id - required and points to an actual project_id in the projects table
-// A resource assignment connects a resource and a project, and is stored in a project_resources table. You decide what columns to use.
-
 exports.down = function (knex) {};
