@@ -24,3 +24,5 @@ router.post("/", (req, res) => {
         .json({ message: "Failed to create new project", error: err });
     });
 });
+
+module.exports = router;
