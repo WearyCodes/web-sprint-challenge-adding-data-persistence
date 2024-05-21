@@ -37,22 +37,22 @@ const tasks = [
   {
     task_description: "Design database schema",
     task_notes: "Create tables and relationships",
-    task_project_id: 1,
-    task_resource_id: 2,
+    project_id: 1,
+    resource_id: 2,
     task_completed: false,
   },
   {
     task_description: "Implement user authentication",
     task_notes: "Use JWT for token-based authentication",
-    task_project_id: 1,
-    task_resource_id: 3,
+    project_id: 1,
+    esource_id: 3,
     task_completed: false,
   },
   {
     task_description: "Set up CI/CD pipeline",
     task_notes: "Configure Jenkins and GitHub Actions",
-    task_project_id: 2,
-    task_resource_id: 1,
+    project_id: 2,
+    resource_id: 1,
     task_completed: false,
   },
   // Add more tasks ensuring the task_project_id and task_resource_id are valid
