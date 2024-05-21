@@ -5,12 +5,13 @@ const Tasks = require("./model.js");
 router.get("/", (req, res) => {
   Tasks.getAll()
     .then((tasks) => {
-      const modifiedTask = tasks.map((task) => {
+      tasks.map((task) => {
         const modifiedTask = {
-         ...task,
+          ...task,
           task_completed: task.task_completed === 1 ? true : false,
         };
-      res.status(200).json(Tasks);
+        res.status(200).json(modifiedTask);
+      });
     })
     .catch((err) => {
       res.status(500).json({ message: "Failed to get Tasks", error: err });
