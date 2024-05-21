@@ -22,7 +22,11 @@ router.post("/", (req, res) => {
   const task = req.body;
   Tasks.create(task)
     .then((newTask) => {
-      res.status(201).json(newTask);
+      const modifiedTask = {
+        ...newTask,
+        task_completed: newTask.task_completed === 1,
+      };
+      res.status(201).json(modifiedTask);
     })
     .catch((err) => {
       res
