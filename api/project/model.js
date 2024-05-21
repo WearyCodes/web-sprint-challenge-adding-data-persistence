@@ -1,7 +1,7 @@
 // build your `Project` model here
 const db = require("../../data/dbConfig.js");
 
-async function find() {
+async function getAll() {
   const projects = await db("projects as p");
   return projects;
 }
@@ -19,7 +19,7 @@ async function create(project) {
 }
 
 module.exports = {
-  find,
+  getAll,
   findById,
   create,
 };

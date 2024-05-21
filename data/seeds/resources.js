@@ -1,3 +1,19 @@
+const projects = [
+  {
+    project_name: "AI project",
+    project_description: "This is a project to create an AI",
+    project_completed: false,
+  },
+  {
+    project_name: "Typescript project",
+    project_description: "This is a project to create a typescript function",
+    project_completed: false,
+  },
+  {
+    project_name: "React project",
+    project_description: "This is a project to create a react component",
+  },
+];
 const resources = [
   {
     resource_name: "Typescript knowledge",
@@ -15,26 +31,7 @@ const resources = [
   },
 ];
 
-const projects = [
-  {
-    project_name: "AI project",
-    project_description: "This is a project to create an AI",
-    project_completed: false,
-  },
-  {
-    project_name: "Typescript project",
-    project_description: "This is a project to create a typescript function",
-    project_completed: false,
-  },
-  {
-    project_name: "React project",
-    project_description: "This is a project to create a react component",
-  },
-];
-
 exports.seed = async function (knex) {
-  await knex("resources").del();
-  await knex("resources").insert(resources);
-  await knex("projects").del();
   await knex("projects").insert(projects);
+  await knex("resources").insert(resources);
 };
