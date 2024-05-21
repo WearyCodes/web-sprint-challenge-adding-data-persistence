@@ -7,8 +7,12 @@ router.get("/", (req, res) => {
     .then((tasks) => {
       const modifiedTasks = tasks.map((task) => {
         return {
-          ...task,
+          task_id: task.task_id,
+          task_description: task.task_description,
+          task_notes: task.task_notes,
           task_completed: task.task_completed === 1,
+          project_name: task.project_name,
+          project_description: task.project_description,
         };
       });
       res.status(200).json(modifiedTasks);
@@ -17,7 +21,6 @@ router.get("/", (req, res) => {
       res.status(500).json({ message: "Failed to get Tasks", error: err });
     });
 });
-
 router.post("/", (req, res) => {
   const task = req.body;
   Tasks.create(task)
