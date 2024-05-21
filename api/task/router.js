@@ -4,7 +4,12 @@ const Tasks = require("./model.js");
 
 router.get("/", (req, res) => {
   Tasks.getAll()
-    .then((Tasks) => {
+    .then((tasks) => {
+      const modifiedTask = tasks.map((task) => {
+        const modifiedTask = {
+         ...task,
+          task_completed: task.task_completed === 1 ? true : false,
+        };
       res.status(200).json(Tasks);
     })
     .catch((err) => {
