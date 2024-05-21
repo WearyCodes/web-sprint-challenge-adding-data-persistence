@@ -16,7 +16,7 @@ exports.up = async function (knex) {
       table.string("task_description", 128).notNullable();
       table.string("task_notes", 128);
       table
-        .integer("task_project_id")
+        .integer("project_id")
         .unsigned()
         .notNullable()
         .references("project_id")

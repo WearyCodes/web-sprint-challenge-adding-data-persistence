@@ -22,7 +22,11 @@ router.post("/", (req, res) => {
   const project = req.body;
   Projects.create(project)
     .then((newProject) => {
-      res.status(201).json(newProject);
+      const modifiedProject = {
+        ...newProject,
+        project_completed: newProject.project_completed === 1 ? true : false,
+      };
+      res.status(201).json(modifiedProject);
     })
     .catch((err) => {
       res
