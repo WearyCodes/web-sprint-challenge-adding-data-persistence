@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Tasks = require("./model.js");
 
 router.get("/", (req, res) => {
-  Tasks.find()
+  Tasks.getAll()
     .then((Tasks) => {
       res.status(200).json(Tasks);
     })
