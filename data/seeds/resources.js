@@ -30,8 +30,60 @@ const resources = [
       "You should be able to find and understand solutions to problems",
   },
 ];
+const tasks = [
+  {
+    task_description: "Design database schema",
+    task_notes: "Create tables and relationships",
+    task_completed: 0,
+    project_id: 1,
+    task_resource_id: 2,
+  },
+  {
+    task_description: "Implement user authentication",
+    task_notes: "Use JWT for token-based authentication",
+    task_completed: 0,
+    project_id: 1,
+    task_resource_id: 3,
+  },
+  {
+    task_description: "Set up CI/CD pipeline",
+    task_notes: "Configure Jenkins and GitHub Actions",
+    task_completed: 0,
+    project_id: 2,
+    task_resource_id: 4,
+  },
+  {
+    task_description: "Write unit tests",
+    task_notes: "Cover all critical functions",
+    task_completed: 0,
+    project_id: 1,
+    task_resource_id: 5,
+  },
+  {
+    task_description: "Create API documentation",
+    task_notes: "Use Swagger for API documentation",
+    task_completed: 1,
+    project_id: 2,
+    task_resource_id: 3,
+  },
+  {
+    task_description: "Optimize database queries",
+    task_notes: "Improve performance of critical queries",
+    task_completed: 0,
+    project_id: 3,
+    task_resource_id: 2,
+  },
+  {
+    task_description: "Deploy application to production",
+    task_notes: "Ensure all tests pass before deployment",
+    task_completed: 0,
+    project_id: 2,
+    task_resource_id: 1,
+  },
+];
 
 exports.seed = async function (knex) {
   await knex("projects").insert(projects);
   await knex("resources").insert(resources);
+  await knex("tasks").insert(tasks);
 };
